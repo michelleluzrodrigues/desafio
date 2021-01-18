@@ -8,7 +8,7 @@ REGRAS:
 
 Calcular a situação de cada aluno baseado na média das 3 provas (P1, P2 e P3), conforme a tabela: 
 
-![](../img/tabela.png)
+![](/img/tabela.png)
 
 Caso o número de faltas ultrapasse 25% do número total de aulas o aluno terá a situação "Reprovado por Falta", independente da média.
 Caso a situação seja "Exame Final" é necessário calcular a "Nota para Aprovação Final"(naf) de cada aluno de acordo com seguinte fórmula: 
