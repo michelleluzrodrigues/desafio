@@ -64,7 +64,10 @@ public class SheetsAndJava {
      * Prints the names and majors of students in a sample spreadsheet:
      * https://docs.google.com/spreadsheets/d/1NpAX8e8U1nh9X8wflTY7BJW9vI3nq4h-ohy_Omr__98/edit#gid=0
      */
+
     public static void main(String... args) throws IOException, GeneralSecurityException {
+        System.out.println("Iniciando processamento ");
+        System.out.println("--------------------------------------------------------------------");
         // AutorizaÇÃO da API.
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         final String spreadsheetId = "1NpAX8e8U1nh9X8wflTY7BJW9vI3nq4h-ohy_Omr__98"; // ID da planilha
@@ -75,6 +78,7 @@ public class SheetsAndJava {
                 .setApplicationName(APPLICATION_NAME)
                 .build();
 
+        System.out.println("Iniciando leitura da planilha");
         // Leitura do Range selecionado
         ValueRange response = service.spreadsheets().values()
                 .get(spreadsheetId, range)
@@ -86,6 +90,7 @@ public class SheetsAndJava {
         // Cria a lista para fazer a atualização da planilha
         List<List<Object>> data = new ArrayList<>();
 
+        System.out.println("Iniciando calculo de situação Aluno");
         //Faz um laço de interação para percorrer lista da planilha
         for (List<Object> dadosAlunos : values) {
 
@@ -99,7 +104,7 @@ public class SheetsAndJava {
                     Float.parseFloat((String) dadosAlunos.get(5)));
 
             //Imprime os dados instanciados
-            System.out.println(aluno.toString());
+            //System.out.println(aluno.toString());
 
             // Representa a linha do aluno que será atualizada
             List<Object> linha = new ArrayList<>();
@@ -112,12 +117,14 @@ public class SheetsAndJava {
         ValueRange body = new ValueRange()
                 .setValues(data);
 
+        System.out.println("Atualizando planilha");
         // Faz update do range selecionado
         UpdateValuesResponse result =
                 service.spreadsheets().values().update(spreadsheetId, "G4:H27", body)
                         .setValueInputOption("USER_ENTERED")
                         .execute();
-
-
+        System.out.println("--------------------------------------------------------------------");
+        System.out.println("Finalizando aplicação");
     }
+
 }

@@ -15,7 +15,7 @@ public class Aluno {
     private Float p2;
     private Float p3;
     private String situacao;
-    private Float notaAprovacao;
+    private Integer notaAprovacao;
     private static final Integer HORAS_AULAS = 60;
 
     /**
@@ -63,26 +63,29 @@ public class Aluno {
      * |----------------------------------------|
      */
     private void verificaSituacao() {
+        System.out.println("Verificando aluno " + this.aluno);
         // Verifica se o numero de faltas ultrapasse 25% das horas aulas
         if (this.falta >= HORAS_AULAS * 0.25) {
             this.situacao = "Reprovado por Falta";
-            this.notaAprovacao = 0F;
+            this.notaAprovacao = 0;
         } else {
 
-            Float media = (this.p1 + this.p2 + this.p3) / 3;
+            Integer media = Math.round((this.p1 + this.p2 + this.p3) / 3);
             // Verifica a media do aluno
+            System.out.println("sua media é: " + media);
             if (media < 50) {
                 this.situacao = "Reprovado por Falta";
-                this.notaAprovacao = 0F;
+                this.notaAprovacao = 0;
             } else if (media < 70) {
                 this.notaAprovacao = 100 - media;
                 this.situacao = "Exame Final";
 
             } else {
                 this.situacao = "Aprovado";
-                this.notaAprovacao = 0F;
+                this.notaAprovacao = 0;
             }
         }
+        System.out.println("Situação " + this.situacao + " nota necessaria para aprovação " + this.notaAprovacao);
     }
 
     /***************************************/
@@ -150,7 +153,7 @@ public class Aluno {
         return Math.round(notaAprovacao);
     }
 
-    public void setNotaAprovacao(Float notaAprovacao) {
+    public void setNotaAprovacao(Integer notaAprovacao) {
         this.notaAprovacao = notaAprovacao;
     }
 }
