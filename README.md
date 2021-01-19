@@ -1,10 +1,10 @@
-<h1 align="center" style="color: #194C36" > DESADIO </h1> 
+<h1 align="center"  ><font color="#194C36"><strong> DESAFIO</strong> </font></h1> 
 
 
-<p align="justify" style="color: #194C36" > Criar uma aplicação em uma linguagem de programação de sua preferência (caso esteja se candidatando a uma vaga de linguagem de programação específica, exemplo: programadornode.js, utilizar a linguagem/tecnologia específica da vaga). A aplicação deve ser capaz de ler uma planilha do google sheets, buscar as informações necessárias, calcular e escrever o resultado na planilha.
+<p align="justify"  > Criar uma aplicação em uma linguagem de programação de sua preferência (caso esteja se candidatando a uma vaga de linguagem de programação específica, exemplo: programadornode.js, utilizar a linguagem/tecnologia específica da vaga). A aplicação deve ser capaz de ler uma planilha do google sheets, buscar as informações necessárias, calcular e escrever o resultado na planilha.
  </p>
 
-<h1 align="center" Color= "#194C36" > REGRAS: </h1> 
+<h1 align="center" ><strong><font color="#194C36"> REGRAS:  </font></strong></h1> 
 
 <p align="justify"> Calcular a situação de cada aluno baseado na média das 3 provas (P1, P2 e P3), conforme a tabela:  </p>
 
